@@ -7,6 +7,7 @@ const port =3000;
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("public"))
 app.use(express.json());
+// app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist'));
 
 const db=new pg.Client({
     user: "postgres",
