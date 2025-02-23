@@ -30,14 +30,14 @@
             <p class="text-muted text-center mb-2"><strong>Author:</strong> <%= blog.author %></p>
             <p class="text-muted text-center mb-4"><strong>Published On:</strong> <%= new Date(blog.pdate).toDateString() %></p>
 
-            <p class="badge bg-primary d-block text-center mb-4">Domain: <%= blog.interest %></p>
-            <p class="fs-5"><%= blog.content %></p>
+            <p class="  d-block text-center mb-4">Domain: <%= blog.interest %></p>
+            <p class="fs-5"><%= blog.blogcontent %></p>
             <hr>
 
           
             <p><%= blog.content %></p>
             <div class="text-center back-btn">
-                <a href="/" class="btn btn-outline-primary btn-lg">Back to Home</a>
+                <a href="/backpg" class="btn btn-outline-primary btn-lg">Back to Home</a>
             </div>
         </div>
     </div>

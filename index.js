@@ -36,6 +36,17 @@ app.get("/login",(req,res)=>{
 app.get("/register",(req,res)=>{
     res.render("register.ejs")
 })
+app.get("/backpg",async(req,res)=>{
+    try{
+        const result = await db.query("select * from blogs"); // Replace with your DB fetching logic
+    // console.log(result)
+    const blogs=result.rows
+    res.render('myblog.ejs', { blogs })
+    }
+    catch(err){
+        console.log(err)
+    }
+})
 app.post("/login",async(req,res)=>{
     const username=req.body.username
     const password=req.body.password
@@ -58,7 +69,7 @@ console.log(username,password)
          
         }
         else{
-            res.rend("retry to login ")
+            res.send("retry to login ")
             // console.log()
         }
     }
@@ -98,10 +109,11 @@ app.post("/addBlog",async(req,res)=>{
     const title=req.body.title
     const interest=req.body.interest
     const summary=req.body.summary
+    const author=req.body.username
     // const img=req.body.img
     const blogcontent=req.body.blogcontent
     const pdate=new Date();
-    const author="Valy"
+    // const author="Valy"
     console.log(title,interest,summary)
     console.log(blogcontent,pdate,author)
     try{
